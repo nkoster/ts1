@@ -14,7 +14,7 @@ const filterByTerm = (input: Array<Link>, searchTerm: string): Array<Link> => {
     const regex = new RegExp(searchTerm, 'i')
     return input.filter(function(arrayElement) {
         return arrayElement.url.match(regex)
-    });
+    })
   }
 
 const obj1: Link = { url: "string1" }
@@ -27,6 +27,8 @@ console.log(filterByTerm(arrOfLinks, 'g2'))
 
 const link1: TranslatedLink = {
   url: 'aap',
-  language: 'nl'
+  language: 'nl',
+  description: 'apekop',
+  id: 0
 }
 console.log(link1)
