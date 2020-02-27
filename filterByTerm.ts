@@ -4,6 +4,10 @@ interface Link {
   description?: string
 }
 
+interface TranslatedLink extends Link {
+  language: string
+}
+
 const filterByTerm = (input: Array<Link>, searchTerm: string): Array<Link> => {
     if (!searchTerm) throw Error('searchTerm cannot be empty')
     if (!input.length) throw Error('inputArr cannot be empty')
@@ -20,3 +24,9 @@ const obj3: Link = { url: "string3" }
 const arrOfLinks: Array<Link> = [obj1, obj2, obj3]
 
 console.log(filterByTerm(arrOfLinks, 'g2'))
+
+const link1: TranslatedLink = {
+  url: 'aap',
+  language: 'nl'
+}
+console.log(link1)
