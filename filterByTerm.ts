@@ -13,13 +13,13 @@ function filterByTerm(
   input: Array<Link>,
   searchTerm: string,
   lookupKey: string = "url"
-) {
+): Array<Link> {
   if (!searchTerm) throw Error("searchTerm cannot be empty")
   if (!input.length) throw Error("input cannot be empty")
   const regex = new RegExp(searchTerm, "i")
   return input.filter(function(arrayElement) {
     return arrayElement[lookupKey].match(regex)
-  }).toString()
+  })
 }
 
 const obj1: Link = { url: "string1" }
